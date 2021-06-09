@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/button_heart"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="48dp"
+            android:layout_height="45dp"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:icon="@drawable/heart_card"
+            app:iconGravity="textStart"
+            app:iconSize="25dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.776"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.513"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button_watched"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="38dp"
+            android:layout_height="44dp"
+            android:text="Button"
+            app:backgroundTint="@color/white"
+            app:icon="@drawable/eye_card"
+            app:iconGravity="textStart"
+            app:iconSize="30dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.884"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.512"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/anime_title"
+            android:layout_width="222dp"
+            android:layout_height="70dp"
+            android:text="название"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.213"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.516" />
+
+        <Button
+            android:id="@+id/button_rate"
+            android:layout_width="331dp"
+            android:layout_height="50dp"
+            android:text="оценить"
+            android:textColor="@color/teal_800"
+            android:textSize="18sp"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.616"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/synopsis"
+            android:layout_width="332dp"
+            android:layout_height="188dp"
+            android:background="#19000000"
+            android:text="Описание"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.93" />
+
+        <ImageView
+            android:id="@+id/anime_image"
+            android:layout_width="323dp"
+            android:layout_height="241dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.131"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.889"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022"
+            app:srcCompat="@drawable/star2" />
+
+        <TextView
+            android:id="@+id/score_field"
+            android:layout_width="45dp"
+            android:layout_height="31dp"
+            android:text="5"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.778"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
