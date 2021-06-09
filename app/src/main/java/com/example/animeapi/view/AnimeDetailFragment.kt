@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.example.animeapi.R
 import com.example.animeapi.databinding.FragmentAnimeDetailBinding
 import com.example.animeapi.databinding.RatingDialogBinding
+import com.example.animeapi.manager.AnimeManager
 import com.example.animeapi.model.Anime
 import com.example.animeapi.model.User
 import com.example.animeapi.network.ApiService
@@ -24,14 +25,11 @@ import kotlinx.coroutines.withContext
 
 class AnimeDetailFragment : Fragment() {
     lateinit var anime : Anime
+    lateinit var animeManager : AnimeManager
     private var _binding: FragmentAnimeDetailBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     private var _dialogBinding: RatingDialogBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val dialogBinding get() = _dialogBinding!!
 
 
@@ -40,6 +38,7 @@ class AnimeDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        animeManager = AnimeManager(requireContext())
         _binding = FragmentAnimeDetailBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -58,6 +57,22 @@ class AnimeDetailFragment : Fragment() {
             .setView(dialogView)
             .setTitle("Оценить аниме")
         val alertDialog = builder.create()
+
+        binding.buttonHeart.setOnClickListener{
+            GlobalScope.launch(Dispatchers.IO) {
+                withContext(Dispatchers.IO) {
+                    animeManager.likeAnime(anime)
+                }
+            }
+        }
+
+        binding.buttonWatched.setOnClickListener{
+            GlobalScope.launch(Dispatchers.IO) {
+                withContext(Dispatchers.IO) {
+                    animeManager.watchAnime(anime)
+                }
+            }
+        }
 
         binding.buttonRate.setOnClickListener {
             alertDialog.show()
